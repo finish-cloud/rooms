@@ -23,4 +23,13 @@ class RoomsController < ApplicationController
 
   def destroy
   end
+
+  def set_room
+    @room = Room.find(params[:id])
+  end
+
+  def room_params
+    params.require(:name).permit(:introduction, :image)
+  end
+
 end
